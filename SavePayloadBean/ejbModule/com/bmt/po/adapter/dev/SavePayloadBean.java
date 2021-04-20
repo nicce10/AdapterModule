@@ -52,10 +52,7 @@ public class SavePayloadBean implements Module {
            key = new MessageKey(msg.getMessageId(), msg.getMessageDirection());
  			audit = PublicAPIAccessFactory.getPublicAPIAccess().getAuditAccess();
  			audit.addAuditLogEntry(key, AuditLogStatus.SUCCESS, "SavePayloadBean Module called!!");
-//			Set<MessagePropertyKey> mpks = msg.getMessagePropertyKeys();
-//			Iterator<MessagePropertyKey> mp1 = mpks.iterator();
-//			while (mp1.hasNext())
-//			audit.addAuditLogEntry(key, AuditLogStatus.SUCCESS, mp1.next().getPropertyName());   
+  
  			InputStream is = msg.getDocument().getInputStream();
  			
  			String slash = "/";
