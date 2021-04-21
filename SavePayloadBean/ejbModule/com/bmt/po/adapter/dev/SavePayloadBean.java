@@ -69,7 +69,10 @@ public class SavePayloadBean implements Module {
       		// if synchronous message, save the reference to request in response filename
       		String refId = "";
       		refId = msg.getRefToMessageId();
+      		boolean chk = fd.endsWith(slash);
+      		if (chk) {
 			fd = fd.concat(slash);
+      		}
 			// Inbound is receiver channel
 			if (msg.getMessageDirection()== MessageDirection.INBOUND) {
 				if (refId != null) {
